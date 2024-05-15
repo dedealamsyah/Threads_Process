@@ -1,0 +1,31 @@
+program ThreadTest_1
+
+    ' Subrutin untuk thread pertama
+    sub thread1 as thread
+        ' Menulis "In thread1" ke output
+        writeln("In thread1")
+        ' Memulai loop tak terbatas
+        while true
+        wend
+    end sub
+    
+    ' Subrutin untuk thread kedua
+    sub thread2 as thread
+        ' Memanggil thread1 
+        call thread1 
+        ' Menulis "In thread2" ke output
+        writeln("In thread2")
+        ' Memulai loop tak terbatas
+        while true
+        wend
+    end sub
+    
+    ' Memanggil thread2
+    call thread2
+    ' Menulis "In main" ke output
+    writeln("In main")
+    
+    ' Memulai loop tak terbatas
+    do
+    loop
+end
